@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomizer: Frontend style</title>
+  <style>
+    *{
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html {
+      background-color: #333344;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #faa;
+    }
+    #name-list{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+    .chosen-name {
+      color: #ffd700;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="nameList">
+    <div>Einar</div>
+    <div>Hilde</div>
+    <div>Ivar</div>
+    <div>Karl Yngve</div>
+    <div>Robin</div>
+    <div>Sunniva</div>
+  </div>
+  <script>
+    let names = document.getElementById("nameList").children;
+    let chosenName = names[Math.floor(Math.random()*names.length)];
+    chosenName.className = "chosen-name";
+  </script>
+</body>
+</html>

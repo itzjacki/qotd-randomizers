@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  background-color: #333344;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #faa;
+  overflow: hidden;
+}
+#nameList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  gap: 0.5rem;
+  background-color: #333344;
+  padding: 0.5rem;
+}
+#nameList * {
+  background-color: #444455;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #faa;
+}
+#selector {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #faa;
+  border-radius: 50%;
+}
