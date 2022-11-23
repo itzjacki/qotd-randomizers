@@ -12,13 +12,12 @@
       <div>Ivar</div>
       <div>Karl Yngve</div>
       <div>Robin</div>
-      <div>Sunniva</div>
     </div>
     <div id="selector" onclick="start()"></div>
     <script>
       const selectorElement = document.getElementById('selector');
       const maxSpeed = 0.15;
-      const friction = 0.001;
+      const friction = 0.003;
       let lastTime;
       let speed = { x: 0, y: 0 };
       let position = { x: 50, y: 50 };
@@ -30,7 +29,6 @@
       }
 
       function loop() {
-        console.log("ran loop");
         var thisTime = Date.now();
         var deltaTime = thisTime - lastTime;
 
@@ -43,6 +41,14 @@
           x: speed.x * (1 - friction),
           y: speed.y * (1 - friction),
         };
+
+        if (Math.abs(speed.x) <= 2 * friction * maxSpeed) {
+          speed.x = 0;
+        }
+
+        if (Math.abs(speed.y) <= 2 * friction * maxSpeed) {
+          speed.y = 0;
+        }
 
         if (position.x >= 100 || position.x <= 0) {
           speed.x = -speed.x * 1.0011;
