@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!-- All koden i dette dokumentet (unntatt denne linja og linja under) er skrevet av ChatGPT. 🤯 -->
+<!-- I, for one, welcome our new overlords -->
+
+<html>
+  <head>
+    <title>Random Names</title>
+    <style>
+      #names-form {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid black;
+      }
+
+      #names-form label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      #names-form input[type='text'] {
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+
+      #names-form button {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="names-form">
+      <label for="names">Names:</label>
+      <input
+        type="text"
+        id="names"
+        name="names"
+        placeholder="Enter names separated by commas"
+      />
+      <button type="submit">Start Randomization</button>
+    </form>
+    <script>
+      const form = document.getElementById('names-form');
+      const namesInput = document.getElementById('names');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const names = namesInput.value.split(',');
+
+        // Shuffle the names array
+        for (let i = names.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [names[i], names[j]] = [names[j], names[i]];
+        }
+
+        // Remove one name from the array at a time and output it
+        let interval = setInterval(() => {
+          if (names.length === 0) {
+            clearInterval(interval);
+          } else {
+            const name = names.pop();
+            console.log(name);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
