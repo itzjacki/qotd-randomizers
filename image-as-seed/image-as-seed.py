@@ -1,9 +1,9 @@
 import random
 import math
 
-names = ["Einar", "Hilde", "Robin", "Sunniva"]
+names = ["Einar", "Ivar", "Robin", "Sunniva", "Karl Yngve"]
 
-with open("image-as-seed/ToT.png", "rb") as logo:
+with open("image-as-seed/ToT-new.png", "rb") as logo:
   f = logo.read()
   b = bytearray(f)
 
