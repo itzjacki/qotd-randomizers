@@ -22,7 +22,7 @@ $ dyalogscript pick_random.apl
 
 And presto! Du har kjørt APL fra terminalen.
 
-## Lyst å forstå?
+## Lyst til å forstå?
 
 Fantastisk! APL er et veldig spennende språk, og jeg anbefaler å lese [Learning APL](https://xpqz.github.io/learnapl/intro.html)), en kort introduksjon til språket.
 
